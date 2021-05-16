@@ -19,7 +19,7 @@ init_printing()
 A = Matrix([[3,5,-1,1],[5,3,1,-1],[-1,1,3,5],[1,-1,5,3]])
 f = factor(A.charpoly().as_expr())
 
-# https://github.com/sympy/sympy/issues/9371  # issuecomment-809308896
+# https://github.com/sympy/sympy/issues/9371#issuecomment-809308896
 # This issue has been fixed on master so you could install sympy from github master. Otherwise a new release will be out soon with the fix. You can see the changes that were needed here:
 # https://github.com/sympy/sympy/pull/20896/files
 
