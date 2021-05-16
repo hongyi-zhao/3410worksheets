@@ -2,13 +2,13 @@
 # coding: utf-8
 
 # # Math 3410: Orthogonal Diagonalization Example
-# 
+#
 # Consider the following matrix:
-# 
+#
 # $$A = \begin{bmatrix}3&5&-1&1\\5&3&1&-1\\-1&1&3&5\\1&-1&5&3\end{bmatrix}$$
-# 
+#
 # (This is an exercise from Nicholson -- notice the block form: $A = \begin{bmatrix}A_1&A_2\\A_2&A_1\end{bmatrix}$)
-# 
+#
 # Let's find the eigenvalues:
 
 # In[13]:
@@ -17,26 +17,31 @@
 from sympy import *
 init_printing()
 A = Matrix([[3,5,-1,1],[5,3,1,-1],[-1,1,3,5],[1,-1,5,3]])
-factor(A.charpoly().as_expr())
+f = factor(A.charpoly().as_expr())
 
+# https://github.com/sympy/sympy/issues/9371  # issuecomment-809308896
+# This issue has been fixed on master so you could install sympy from github master. Otherwise a new release will be out soon with the fix. You can see the changes that were needed here:
+# https://github.com/sympy/sympy/pull/20896/files
+
+# https://stackoverflow.com/questions/20979993/how-to-pretty-print-in-ipython-notebook-via-sympy
+pprint(f)
 
 # The eigenvalues are $-4, 0$, and $8$ (which has multiplicity 2). Let's get the eigenvectors:
 
 # In[3]:
 
-
-L=A.eigenvects()
-L
+L = A.eigenvects()
+pprint(L)
 
 
 # Our eigenvectors are:
-# 
-# $X = \begin{bmatrix}-1\\1\\-1\\1\end{bmatrix}$, corresponding to $\lambda =-4$, 
+#
+# $X = \begin{bmatrix}-1\\1\\-1\\1\end{bmatrix}$, corresponding to $\lambda =-4$,
 # $Y = \begin{bmatrix}1\\-1\\-1\\1\end{bmatrix}$, corresponding to $\lambda = 0$,
 # $Z_1 = \begin{bmatrix}1\\1\\0\\0\end{bmatrix}$ and $Z_2 = \begin{bmatrix}0\\0\\1\\1\end{bmatrix}$, corresponding to $\lambda=8$.
-# 
+#
 # Notice that $X$ is orthogonal to $Y, Z_1, Z_2$, $Y$ is orthogonal to $Z_1, Z_2$ (and $X$, of course). This much is guaranteed.
-# 
+#
 # We also see that $Z_1$ is orthogonal to $Z_2$, which is **not** guaranteed - we got lucky! Ordinarily, for repeated eigenvalues we have to use the Gram Schmidt algorithm to produce an orthogonal basis for the corresponding eigenspace.
 
 # In[4]:
@@ -47,7 +52,7 @@ Y = L[1][2][0]
 Z1= L[2][2][0]
 Z2= L[2][2][1]
 EV=X,Y,Z1,Z2
-EV
+pprint(EV)
 
 
 # In caes you want confirmation that these are eigenvectors:
@@ -55,7 +60,7 @@ EV
 # In[5]:
 
 
-A*X, A*Y, A*Z1, A*Z2
+pprint(A*X, A*Y, A*Z1, A*Z2)
 
 
 # Or, more efficiently:
