@@ -60,7 +60,7 @@ pprint(EV)
 # In[5]:
 
 
-pprint(A*X, A*Y, A*Z1, A*Z2)
+pprint([A*X, A*Y, A*Z1, A*Z2])
 
 
 # Or, more efficiently:
@@ -102,6 +102,9 @@ P = Matrix(BlockMatrix(eigen_onb))
 P,P*P.T
 
 
+#https://stackoverflow.com/questions/50854803/difference-between-eye-and-identity-in-sympy
+P.T * P == eye(4)  
+
 # Now we can diagonalize. Notice that since $P$ is orthogonal, $P^T=P^{-1}$
 
 # In[10]:
@@ -115,18 +118,22 @@ D
 
 # In[11]:
 
+#https://ipython.org/ipython-doc/dev/interactive/magics.html#magic-timeit
 
+#In [95]: %timeit A**121                                                                                                            
+#1.65 ms ± 75.1 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 A**121
 
 
 # In[12]:
 
+#In [93]: %%timeit 
+#    ...:  P*(D**121)*P.T 
+#    ...:                                                                                                                           
+#589 µs ± 5.32 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 
 P*(D**121)*P.T
 
-
 # In[ ]:
-
-
 
 
