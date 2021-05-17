@@ -53,8 +53,29 @@ get_ipython().run_cell_magic('html', '', '<link href="https://pretextbook.org/be
 # In[ ]:
 
 
+#https://discuss.python.org/t/the-span-lines-problem-when-p-eigenvects-displays-some-too-long-expressions/8769/2?u=hongyi-zhao
+#Jean Abou Samra
+#jeanas
+#2h
+
+#I think you want to replace
+
+#sympy.init_printing()
+
+#with
+
+#sympy.init_printing(wrap_line=False)
+
+#The output of help(sympy.init_printing) explains all possible parameters.
+
+#For more info, see:
+#In [97]: init_printing?
+#In [98]: help(init_printing)
+
 from sympy import *
-init_printing()
+#init_printing()
+init_printing(wrap_line=False)
+
 
 
 # <div class="mathbook-content"><p xmlns:svg="http://www.w3.org/2000/svg" id="p-761"><em class="alert">Note:</em> if you are going to be working with multiple libraries, and more than one of them defines a certain command, instead of <code class="code-inline tex2jax_ignore">from sympy import all</code> you can do <code class="code-inline tex2jax_ignore">import sympy as sy</code>. If you do this, each SymPy command will need to be appended with <code class="code-inline tex2jax_ignore">sy</code>; for example, you might write <code class="code-inline tex2jax_ignore">sy.Matrix</code> instead of simply <code class="code-inline tex2jax_ignore">Matrix</code>. Let's use SymPy to create a $2\times 3$ matrix.</p></div>
