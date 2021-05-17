@@ -88,6 +88,13 @@ Z,A*Z
 
 # In[8]:
 
+#https://www.ucl.ac.uk/~ucahmdl/LessonPlans/Lesson10.pdf
+#6.3    Orthogonal and orthonormal vectors
+#Definition. We say that 2 vectors are orthogonal if they are perpendicularto each other.  i.e.  the dot product of the two vectors is zero.
+
+#Definition. A  set  of  vectorsSis  orthonormal  if  every  vector  inShasmagnitude1and the set of vectors are mutually orthogonal.
+
+#https://en.wikipedia.org/wiki/Orthonormal_basis
 
 eigen_onb = list()
 for i in range(4):
