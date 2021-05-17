@@ -107,6 +107,11 @@ Rational(2/7)
 # In[ ]:
 
 
+
+#https://stackoverflow.com/questions/41860294/what-does-s-signify-in-sympy
+#For more info, check it with:
+#In [28]: S??
+
 S(2)/7
 
 
@@ -227,7 +232,7 @@ D
 
 # In[ ]:
 
-
+#https://en.wikipedia.org/wiki/Row_echelon_form#Reduced_row_echelon_form
 a = Symbol('a')
 b = Symbol('b')
 A = Matrix(3,3,[a,2,b,2,1,a,2*a,b,3])
@@ -256,10 +261,13 @@ X.dot(Y),(X.T)*Y
 
 # In[ ]:
 
-
+#https://www.geeksforgeeks.org/null-space-and-nullity-of-a-matrix/
 A=Matrix(2,3,[1,0,3,2,-1,4])
 L=A.nullspace()
 GramSchmidt(L)
+
+GramSchmidt(L,True)
+
 
 
 # <div class="mathbook-content"><p xmlns:svg="http://www.w3.org/2000/svg" id="p-803">If for some reason you need to reference particular vectors in a list, this can be done by specifying the index. If <code class="code-inline tex2jax_ignore">L=[X,Y,Z]</code>, then <code class="code-inline tex2jax_ignore">L[0]==X</code>, <code class="code-inline tex2jax_ignore">L[1]==Y</code>, and <code class="code-inline tex2jax_ignore">L[2]==Z</code>.</p></div>
@@ -273,6 +281,10 @@ GramSchmidt(L)
 # <div class="mathbook-content"><p xmlns:svg="http://www.w3.org/2000/svg" id="p-809">Don't forget that when entering complex matrices, the complex unit is entered as <code class="code-inline tex2jax_ignore">I</code>. Also, complex expressions are not simplified by default, so you will often need to wrap your output line in <code class="code-inline tex2jax_ignore">simplify()</code>. The Sage Cell below contains complete code for the unitary diagonalization of a $2\times 2$ hermitian matrix with distinct eigenvalues. When doing a problem like this in a Sage cell, it's a good idea to execute each line of code (and display output) before moving on to the next. In this case, printing the output for the list <code class="code-inline tex2jax_ignore">L</code> given by <code class="code-inline tex2jax_ignore">A.eigenvects()</code> helps explain the complicated-looking definitions of the vectors <code class="code-inline tex2jax_ignore">v,w</code>. Of course, if we had a matrix with repeated eigenvalues, we'd need to add steps involving Gram Schmidt.</p></div>
 
 # In[ ]:
+
+
+#In [94]: L[0][2][0] == ((L[0])[2])[0]
+#Out[94]: True
 
 
 from sympy import *
