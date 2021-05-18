@@ -54,7 +54,7 @@ get_ipython().run_cell_magic('html', '', '<link href="https://pretextbook.org/be
 
 # In[ ]:
 
-
+#https://en.wikipedia.org/wiki/Singular_value_decomposition
 from sympy import *
 init_printing()
 A = Matrix([[1,0,1],[-1,1,0]])
@@ -100,7 +100,7 @@ Q,Q*Q.T
 # In[ ]:
 
 
-SigA = Matrix([[L0[0],0,0],[0,L[1],0])
+SigA = Matrix([[L0[0],0,0],[0,L[1],0]])
 SigA
 
 
