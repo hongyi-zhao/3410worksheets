@@ -93,7 +93,7 @@ get_ipython().run_cell_magic('html', '', '<link href="https://pretextbook.org/be
 
 
 from sympy import *
-init_printing()
+init_printing(wrap_line=False)
 V1=Matrix([1,0,2,3])
 V2=Matrix([4,2,0,-3])
 V3=Matrix([0,4,-3,2])
