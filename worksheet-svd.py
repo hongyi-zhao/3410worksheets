@@ -121,7 +121,7 @@ P
 
 # In[ ]:
 
-
+#https://github.com/sean-fitzpatrick/3410worksheets/issues/1
 P*SigA*(Q.T)
 
 
