@@ -108,6 +108,10 @@ N=Matrix(BlockMatrix([V1,V2,V3,V4]))
 N
 
 
+#In [103]: A4 == N
+#Out[103]: True
+
+
 # Wrapping `BlockMatrix` in `Matrix` gets rid of extra brackets around each column. (I found this on [StackOverflow](https://stackoverflow.com/questions/50606675/build-matrices-from-block-matrices-in-sympy).) You can also use the `row_join` command (from the [SymPy documentation](https://docs.sympy.org/latest/tutorial/matrices.html)) as follows:
 
 # In[ ]:
