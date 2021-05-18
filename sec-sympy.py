@@ -253,6 +253,9 @@ D
 
 # In[ ]:
 
+#https://docs.sympy.org/latest/tutorial/matrices.html#rref
+#To put a matrix into reduced row echelon form, use rref. rref returns a tuple of two elements. The first is the reduced row echelon form, and the second is a tuple of indices of the pivot columns.
+
 #https://en.wikipedia.org/wiki/Row_echelon_form#Reduced_row_echelon_form
 a = Symbol('a')
 b = Symbol('b')
@@ -288,6 +291,42 @@ L=A.nullspace()
 GramSchmidt(L)
 
 GramSchmidt(L,True)
+
+#https://stackoverflow.com/questions/43777147/creating-sympy-matrices-from-columns
+#In [85]: a=.5*eye(2)
+
+#In [86]: a
+#Out[86]: 
+#⎡0.5   0 ⎤
+#⎢        ⎥
+#⎣ 0   0.5⎦
+
+#In [87]: GramSchmidt([a.col(i) for i in range(a.cols)],orthonormal=True)
+#Out[87]: 
+#⎡⎡1.0⎤  ⎡ 0 ⎤⎤
+#⎢⎢   ⎥, ⎢   ⎥⎥
+#⎣⎣ 0 ⎦  ⎣1.0⎦⎦
+
+#In [88]: GramSchmidt([a.col(i) for i in range(a.cols)],True)
+#Out[88]: 
+#⎡⎡1.0⎤  ⎡ 0 ⎤⎤
+#⎢⎢   ⎥, ⎢   ⎥⎥
+#⎣⎣ 0 ⎦  ⎣1.0⎦⎦
+
+#In [89]: GramSchmidt([a.col(i) for i in range(a.cols)])
+#Out[89]: 
+#⎡⎡0.5⎤  ⎡ 0 ⎤⎤
+#⎢⎢   ⎥, ⎢   ⎥⎥
+#⎣⎣ 0 ⎦  ⎣0.5⎦⎦
+
+#In [90]: GramSchmidt(([a.col(i) for i in range(a.cols)]),True)
+#Out[90]: 
+#⎡⎡1.0⎤  ⎡ 0 ⎤⎤
+#⎢⎢   ⎥, ⎢   ⎥⎥
+#⎣⎣ 0 ⎦  ⎣1.0⎦⎦
+
+
+
 
 
 
